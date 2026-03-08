@@ -1,7 +1,7 @@
  const AllCardDisplay = document.getElementById("All-card-display");
  let AllCard =[];
 
- AllcardsAccess =() =>{
+  AllcardsAccess =() =>{
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
   .then(response=>response.json())
   //.then((json) => console.log(json.data))
@@ -129,7 +129,7 @@
     CallToDisplay(AllCard);
      AllCardDisplay.innerHTML = `${AllCard.length} issue `;
 
-  })
+  });
 
   // openbtn
 
@@ -138,7 +138,7 @@
         CallToDisplay(OpenCard);
          AllCardDisplay.innerHTML = `${OpenCard.length} issue `;
 
-  })
+  });
 
 
     // openbtn
@@ -148,7 +148,7 @@
         CallToDisplay(closeCard)
          AllCardDisplay.innerHTML = `${closeCard.length} issue `;
 
-  })
+  });
 
 
 
@@ -163,4 +163,3 @@ AllcardsAccess();
 
  
  
-
