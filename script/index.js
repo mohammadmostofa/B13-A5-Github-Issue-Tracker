@@ -1,6 +1,5 @@
 
-const LoginBtn = document.getElementById("login-btn").addEventListener("click", function(){
-
+const LoginBtn = document.getElementById("login-btn").addEventListener("click", function(event){
 const UserName = document.getElementById("name").value;
 const LoginPassword = document.getElementById("password").value;
 
@@ -15,5 +14,10 @@ else{
 }
 
 });
+
+
+
+
+
 
 

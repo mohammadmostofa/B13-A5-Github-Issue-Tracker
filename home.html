@@ -80,9 +80,9 @@
 
       <div class="flex max-w-[1100px] w-full  bg-[#efefef] justify-start py-10 px-5 space-x-4 mt-10  rounded-sm ">
 
-         <button  id="AllBtn" class="btn btn-primary px-9 py-4">All</button>
-         <button class="btn btn-primary px-9 py-4 bg-[#FFFFFF] hover:bg-black hover:text-white hover:border-none text-[#64748B] border-yellow-200">Open</button>
-         <button class="btn btn-primary px-9 py-4 bg-[#FFFFFF] hover:bg-black hover:text-white hover:border-none  text-[#64748B] border-yellow-200">Close</button>
+         <button onclick=""  id="AllBtn" class="btn btn-primary px-9 py-4">All</button>
+         <button id="open-btn" class="btn btn-primary px-9 py-4 bg-[#FFFFFF] hover:bg-black hover:text-white hover:border-none text-[#64748B] border-yellow-200">Open</button>
+         <button id="close-btn" class="btn btn-primary px-9 py-4 bg-[#FFFFFF] hover:bg-black hover:text-white hover:border-none  text-[#64748B] border-yellow-200">Close</button>
        
 
     </div>
@@ -104,7 +104,7 @@
           <div><img src="assets/images/Aperture.png" class="mx-auto" alt=""></div>
 
          <div>
-           <h2  id="All-card-display"  class=" text-2xl font-bold">0 Issues</h2>
+           <h2  id="All-card-display"  class="  text-2xl font-bold">0 Issues</h2>
            <p>Track and manage your project issues</p>
          </div>
         
@@ -131,6 +131,25 @@
     <div class="flex justify-center items-center">
 
       <div id = 'card-container' class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 my-20 w-[1100px] gap-4">
+    </div>
+
+    </div>
+
+
+   </section>
+
+    </section>
+
+
+
+
+
+<!-- open card section -->
+        <section class="mx-auto">
+    
+    <div class="flex justify-center items-center">
+
+      <div id = 'open-card-container' class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 my-20 w-[1100px] gap-4">
     </div>
 
     </div>
