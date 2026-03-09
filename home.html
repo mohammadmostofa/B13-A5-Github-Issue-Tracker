@@ -80,9 +80,9 @@
 
       <div class="flex max-w-[1100px] w-full  bg-[#efefef] justify-start py-10 px-5 space-x-4 mt-10  rounded-sm ">
 
-         <button id="AllBtn" class=" filter-btn bg-blue-500  btn btn-primary px-9 py-4 border-none font-semibold">All</button>
-         <button id="open-btn" class="filter-btn  btn btn-primary px-9 py-4 bg- bg-green-400 hover:border-none font-semibold text-white border-yellow-200">Open</button>
-         <button id="close-btn" class="filter-btn btn btn-primary px-9 py-4 bg- bg-violet-400 hover:border-none font-semibold  text-white border-yellow-200">Close</button>
+         <button id="AllBtn" class=" filter-btn bg-blue-700  btn btn-primary px-9 py-4 border-none font-semibold">All</button>
+         <button id="open-btn" class="filter-btn  btn btn-primary px-9 py-4 bg- bg-blue-700 hover:border-none font-semibold text-white border-yellow-200">Open</button>
+         <button id="close-btn" class="filter-btn btn btn-primary px-9 py-4 bg- bg-blue-700 hover:border-none font-semibold  text-white border-yellow-200">Close</button>
        
 
     </div>
@@ -132,7 +132,6 @@
 
       <div id = 'card-container' class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 my-20 w-[1100px] gap-4">
     </div>
-
     </div>
 
 
@@ -158,6 +157,30 @@
    </section>
 
     </section>
+
+
+    <div>
+
+      <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+<dialog  id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box shadow-md" >
+  <div id="details_box">
+
+    
+
+  </div>    
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-sm bg-blue-700 text-white">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+    </div>
+
 
   </main>
 

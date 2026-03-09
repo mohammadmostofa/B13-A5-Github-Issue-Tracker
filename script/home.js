@@ -22,7 +22,71 @@
         })
 
 
-     
+
+      window.LoadCardDetails =async (id)=>{
+            const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
+            const res = await fetch(url)
+            const data =await res.json()
+            const details =data.data
+            displayCardDetails(details); //call to catch function
+
+      }
+
+            const displayCardDetails =(card)=>{
+                       //console.log(card)
+                       const detailsBox = document.getElementById("details_box");
+                       detailsBox.innerHTML = `
+                                      
+                       <div class="flex flex-col  space-y-5">
+
+      <h2 class="font-bold text-[20px] ">${card.title}</h2>
+      <div class="flex items-start space-x-2">
+        <button class="btn btn-sm rounded-full border-none outline-none text-white ${card.status === 'open' ? 'bg-green-800'  : 'bg-violet-900' } ">open </button><span>.</span>
+        <h3>Opened by ${card.author} .</h3>
+        <h4>${card.createdAt}</h4>
+      </div>
+         
+      <div class="flex justify-start items-start space-x-4">
+                   ${card.labels.map(labal => ` 
+                  <span class="px-4 bg-[#FDE68A] text-[#d51500] border-none rounded-full text-center "><i class="fa-solid fa-bug"></i> ${labal}</span>
+                 `).join("")}
+                 
+      </div>
+         
+      <div> 
+        <p>${card.description}</p>
+      </div>
+
+      <div class="flex justify-between  bg-slate-50 py-4 px-2 space-y-2">
+             <div class=" flex-1 space-y-3">
+                     <h2>assign:</h2>
+                     <h3 class="font-semibold text-black ">${card.assignee}</h3>
+             </div>
+
+             <div class="flex-1  space-y-3 ">
+                     <h2>priority:</h2>
+                               <button class="border-2 border-black btn btn-sm  bg-[#FEECEC] font-semibold  rounded-md text-bold outline-none
+               ${
+              card.priority ===  'high' ? ' bg-red-200 text-red-800 border-red-900' :
+              card.priority ===  'medium' ?  'bg-yellow-200 text-yellow-600 border-yellow-700':
+              card.priority === 'low' ? 'bg-gray-200 text-gray-500 border-black':
+               'bg-black' }">
+          
+              ${card.priority}
+
+          </button>
+             </div>
+
+      </div>
+
+    </div>
+
+                       `
+                      document.getElementById("my_modal_5").showModal();//showModal holo daisy ul created show function
+            };
+
+           
+
         // AllCardDisplay(json.data) next part
 
 
@@ -54,11 +118,11 @@
         </div>
 
         <div class="col-span-1 text-end">
-          <button class="border border-red-500 px-8 py-2 bg-[#FEECEC] font-semibold rounded-md
+          <button class="border-2 border-black btn btn-sm  bg-[#FEECEC] font-semibold  rounded-md text-bold outline-none
                ${
-              card.priority ===  'high' ? ' bg-red-200 text-red-800' :
-              card.priority ===  'medium' ?  'bg-yellow-200 text-yellow-600':
-              card.priority === 'low' ? 'bg-gray-200 text-gray-500':
+              card.priority ===  'high' ? ' bg-red-200 text-red-800 border-red-900' :
+              card.priority ===  'medium' ?  'bg-yellow-200 text-yellow-600 border-yellow-700':
+              card.priority === 'low' ? 'bg-gray-200 text-gray-500 border-black':
                'bg-black' }">
           
               ${card.priority}
@@ -66,7 +130,8 @@
           </button>
         </div>
 
-        <div class="col-span-full font-bold text-[16px] py-5">
+        <div onclick="LoadCardDetails(${card.id})"  class="col-span-full font-bold text-[16px] py-5">
+        
           <span> ${card.title}  </span>
         </div>
 
@@ -77,10 +142,8 @@
         
 
         ${card.labels.map(labal => ` 
-                    <button class="btn btn-primary bg-[#FDE68A] text-[#D97706] border-none rounded-lg"> <i class="fa-solid fa-bug"></i> ${labal} </button>
-
-
-          `).join("")}
+         <span class="px-4 py-1 bg-[#FDE68A] text-[#d51500] border-none rounded-full text-center text-nowrap"><i class="fa-solid fa-bug"></i> ${labal}</span>
+       `).join("")}
                   
           
             
