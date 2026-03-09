@@ -12,3 +12,11 @@ buttons.forEach(btn =>{
 
 
 
+// set dealay function all  
+
+ const delay = (ms) =>{
+      return new Promise(resolve => setTimeout(resolve,ms))
+ }
+ 
+
+

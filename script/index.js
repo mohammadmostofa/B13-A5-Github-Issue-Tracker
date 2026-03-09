@@ -5,7 +5,14 @@ const LoginPassword = document.getElementById("password").value;
 
 
 if(UserName === "admin" && LoginPassword === 'admin123'){
-     window.location.assign("/home.html");
+
+  
+  setTimeout((ms) => {
+    
+         window.location.assign("/home.html");
+
+  } , 100);
+
      return ;
 }
 

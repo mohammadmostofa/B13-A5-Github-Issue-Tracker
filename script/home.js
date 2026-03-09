@@ -23,7 +23,11 @@
 
 
 
+
+      // modal api setup
+
       window.LoadCardDetails =async (id)=>{
+           await delay(100);
             const url = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`
             const res = await fetch(url)
             const data =await res.json()
@@ -32,7 +36,14 @@
 
       }
 
+
+
+
             const displayCardDetails =(card)=>{
+                     setTimeout((ms) => {
+                      
+                     }, 2000);
+
                        //console.log(card)
                        const detailsBox = document.getElementById("details_box");
                        detailsBox.innerHTML = `
@@ -85,13 +96,11 @@
                       document.getElementById("my_modal_5").showModal();//showModal holo daisy ul created show function
             };
 
-           
 
         // AllCardDisplay(json.data) next part
 
 
        const CallToDisplay = (cards) =>{
-           
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
 
@@ -186,6 +195,27 @@
 
   }
 
+
+//search btn
+    const searchIssueDetails = ()=>{
+          const searchInput = document.getElementById("search_issue").value;
+          if(!searchInput){
+            return  alert("Try Agian !")
+          } ;
+
+          // fillter arraw functio of Allcard
+           const searchCards = AllCard.filter(issue =>
+           issue.title.toLowerCase() === (searchInput.toLowerCase())
+
+           )    
+             
+           CallToDisplay(searchCards);
+           AllCardDisplay.innerHTML = `${searchCards.length} issue`
+    }
+
+  document.getElementById("Search_btn").addEventListener("click", searchIssueDetails);
+
+
   // allbtn
 
   document.getElementById("AllBtn").addEventListener('click', () => {
@@ -216,10 +246,9 @@
 
 
  }
+ 
 
-AllcardsAccess();
-
-
+  AllcardsAccess();
 
 
 
