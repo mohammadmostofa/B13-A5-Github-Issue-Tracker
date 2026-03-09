@@ -118,7 +118,7 @@
                   div.innerHTML = `
                   
             
-<div class="grid grid-cols-2 max-w-[1100px] w-full bg-white py-10 px-4 mt-5 border-t-[10px]  ${card.status === 'open' ? 'border-green-800'  : 'border-violet-900' }  rounded-xl shadow-sm">
+<div class="grid grid-cols-2  bg-white py-10 px-4 mt-5 border-t-[10px]  ${card.status === 'open' ? 'border-green-800'  : 'border-violet-900' }  rounded-xl shadow-sm">
 
         <div class="col-span-1 py-2">
  

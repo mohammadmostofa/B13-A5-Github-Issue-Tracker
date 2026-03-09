@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sing In </title>
+  <title>GitHub_Issue_traker</title>
+   <link rel="shortcut icon" href="assets/images/github-logo.png" type="image/x-icon">
   <!-- css link -->
   <link rel="stylesheet" href="assets/style.css">
   <!-- daisy and tailwind cdn link -->
@@ -57,12 +58,13 @@
       <!-- right -->
 
       <div class=" flex justify-center items-center space-x-3  ">
+
     <div class="border border-gray-200 p-2 rounded-sm flex justify-center ">
       <span><i class="fa-solid fa-magnifying-glass px-3"></i></span>
       <input class="outline-none border-none place-content-center " type="search" id="search_issue" placeholder="  Search issues..." >
     </div>
 
-          <div><button id="Search_btn" class="btn btn-primary bg-[#4A00FF] hover:bg-[#270080]  text-white  py-4 px-3">+New Issue</button></div>
+          <div><button id="Search_btn" class="btn btn-primary bg-[#4A00FF] hover:bg-[#270080]  text-white py-4 px-3 text-nowrap">+ New Issue</button></div>
 
   </div>
 
@@ -108,7 +110,7 @@
 
          <div>
            <h2  id="All-card-display"  class="  text-2xl font-bold">0 Issues</h2>
-           <p>Track and manage your project issues</p>
+           <p class="text-sm md:text-md">Track and manage your project issues</p>
          </div>
         
 
@@ -131,9 +133,9 @@
    <!-- All cards section -->
     <section class="mx-auto">
     
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center ">
 
-      <div id = 'card-container' class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 my-20 w-[1100px] gap-4">
+      <div id = 'card-container' class="grid grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 pl-4 items-center w-[1130px]  space-x-4 ">
     </div>
     </div>
 
